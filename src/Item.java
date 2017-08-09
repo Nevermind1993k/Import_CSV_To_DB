@@ -49,4 +49,15 @@ public class Item {
     void setDateOfLastUpdate(LocalDate dateOfLastUpdate) {
         this.dateOfLastUpdate = dateOfLastUpdate;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", code=" + code +
+                ", producer='" + producer + '\'' +
+                ", dateOfLastUpdate=" + dateOfLastUpdate +
+                '}';
+    }
 }

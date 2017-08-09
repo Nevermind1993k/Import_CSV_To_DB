@@ -7,7 +7,7 @@ public class Customer {
     private String gender;
     private String phoneNumber;
     private int [] lastPurchases;
-    private LocalDate dateOflastPurchase;
+    private LocalDate dateOfLastPurchase;
 
     Customer() {
     }
@@ -60,11 +60,11 @@ public class Customer {
         this.lastPurchases = lastPurchases;
     }
 
-    public LocalDate getDateOflastPurchase() {
-        return dateOflastPurchase;
+    public LocalDate getDateOfLastPurchase() {
+        return dateOfLastPurchase;
     }
 
-    public void setDateOflastPurchase(LocalDate dateOflastPurchase) {
-        this.dateOflastPurchase = dateOflastPurchase;
+    public void setDateOfLastPurchase(LocalDate dateOfLastPurchase) {
+        this.dateOfLastPurchase = dateOfLastPurchase;
     }
 }
