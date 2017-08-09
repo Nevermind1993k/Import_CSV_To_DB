@@ -35,13 +35,12 @@ public class Main {
                 }
                 strArr = str.split(";");
                 customer.setName(strArr[0]);
-                customer.setDateOfBirth(convertStringToDate(strArr[1], "d MMMM yyyy"));
+                customer.setDateOfBirth(convertStringToDate(strArr[1]));
                 customer.setAddress(strArr[2]);
                 customer.setGender(strArr[3]);
                 customer.setPhoneNumber(strArr[4]);
                 customer.setLastPurchases(convertStringToArr(strArr[5]));
-                //?
-
+                customer.setDateOfBirth(convertStringToDate(strArr[6]));
             }
 
 
@@ -83,7 +82,8 @@ public class Main {
                 item.setTitle(strArr[1]);
                 item.setCode(Integer.parseInt(strArr[2]));
                 item.setProducer(strArr[3]);
-                item.setDateOfLastUpdate(convertStringToDate(strArr[4], "dd.MM.yyyy k:mm:ss")); // Не проставляет время
+                item.setDateOfLastUpdate(convertStringToDate(strArr[4])); // Не проставляет время
+
             }
         } catch (IOException exc) {
             System.out.println("File Read Error");
@@ -122,21 +122,27 @@ public class Main {
      * @return Localdate
      * @throws ParseException
      */
-    private static LocalDate convertStringToDate(String strDate, String format) throws ParseException {
+    private static LocalDate convertStringToDate(String strDate) throws ParseException {
         LocalDate date;
         DateTimeFormatter formatter;
 
         try {
-            if (format.equals("d MMMM yyyy")) {
+            if (strDate.contains(".") && strDate.contains(":")) {
+                formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy H:mm:ss");
+                date = LocalDate.parse(strDate, formatter);
+                return date;
+            }
+            if (strDate.contains("/")) {
+                formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+                date = LocalDate.parse(strDate, formatter);
+                return date;
+            }
+            if (strDate.contains(" ")) {
                 formatter = DateTimeFormatter.ofPattern("d MMMM yyyy", Locale.ENGLISH);
                 date = LocalDate.parse(strDate, formatter);
                 return date;
             }
-            if (format.equals("dd.MM.yyyy k:mm:ss")) {
-                formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy k:mm:ss", Locale.ENGLISH);
-                date = LocalDate.parse(strDate, formatter);
-                return date;
-            }
+
 
         } catch (DateTimeParseException exc) {
             System.out.printf("%s is not parsable!%n", strDate);

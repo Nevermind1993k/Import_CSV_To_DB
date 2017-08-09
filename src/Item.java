@@ -1,20 +1,20 @@
 import java.time.LocalDate;
 
 public class Item {
-    int id;
-    String title;
-    int code;
-    String producer;
-    LocalDate dateOfLastUpdate;
+    private int id;
+    private String title;
+    private int code;
+    private String producer;
+    private LocalDate dateOfLastUpdate;
 
-    public Item() {
+    Item() {
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    void setId(int id) {
         this.id = id;
     }
 
@@ -22,7 +22,7 @@ public class Item {
         return title;
     }
 
-    public void setTitle(String title) {
+    void setTitle(String title) {
         this.title = title;
     }
 
@@ -30,7 +30,7 @@ public class Item {
         return code;
     }
 
-    public void setCode(int code) {
+    void setCode(int code) {
         this.code = code;
     }
 
@@ -38,7 +38,7 @@ public class Item {
         return producer;
     }
 
-    public void setProducer(String producer) {
+    void setProducer(String producer) {
         this.producer = producer;
     }
 
@@ -46,7 +46,7 @@ public class Item {
         return dateOfLastUpdate;
     }
 
-    public void setDateOfLastUpdate(LocalDate dateOfLastUpdate) {
+    void setDateOfLastUpdate(LocalDate dateOfLastUpdate) {
         this.dateOfLastUpdate = dateOfLastUpdate;
     }
 }

@@ -1,23 +1,22 @@
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Customer {
-    String name;
-    LocalDate dateOfBirth;
-    String address;
-    String gender;
-    String phoneNumber;
-    int [] lastPurchases;
-    Date dateOflastPurchase;
+    private String name;
+    private LocalDate dateOfBirth;
+    private String address;
+    private String gender;
+    private String phoneNumber;
+    private int [] lastPurchases;
+    private LocalDate dateOflastPurchase;
 
-    public Customer() {
+    Customer() {
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
@@ -25,7 +24,7 @@ public class Customer {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -33,7 +32,7 @@ public class Customer {
         return address;
     }
 
-    public void setAddress(String address) {
+    void setAddress(String address) {
         this.address = address;
     }
 
@@ -41,7 +40,7 @@ public class Customer {
         return gender;
     }
 
-    public void setGender(String gender) {
+    void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -49,7 +48,7 @@ public class Customer {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -57,15 +56,15 @@ public class Customer {
         return lastPurchases;
     }
 
-    public void setLastPurchases(int[] lastPurchases) {
+    void setLastPurchases(int[] lastPurchases) {
         this.lastPurchases = lastPurchases;
     }
 
-    public Date getDateOflastPurchase() {
+    public LocalDate getDateOflastPurchase() {
         return dateOflastPurchase;
     }
 
-    public void setDateOflastPurchase(Date dateOflastPurchase) {
+    public void setDateOflastPurchase(LocalDate dateOflastPurchase) {
         this.dateOflastPurchase = dateOflastPurchase;
     }
 }
