@@ -12,7 +12,7 @@ public class Customer {
     Customer() {
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
@@ -20,7 +20,7 @@ public class Customer {
         this.name = name;
     }
 
-    public LocalDate getDateOfBirth() {
+    LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
@@ -28,7 +28,7 @@ public class Customer {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getAddress() {
+    String getAddress() {
         return address;
     }
 
@@ -36,7 +36,7 @@ public class Customer {
         this.address = address;
     }
 
-    public String getGender() {
+    String getGender() {
         return gender;
     }
 
@@ -44,7 +44,7 @@ public class Customer {
         this.gender = gender;
     }
 
-    public String getPhoneNumber() {
+    String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -60,11 +60,11 @@ public class Customer {
         this.lastPurchases = lastPurchases;
     }
 
-    public LocalDate getDateOfLastPurchase() {
+    LocalDate getDateOfLastPurchase() {
         return dateOfLastPurchase;
     }
 
-    public void setDateOfLastPurchase(LocalDate dateOfLastPurchase) {
+    void setDateOfLastPurchase(LocalDate dateOfLastPurchase) {
         this.dateOfLastPurchase = dateOfLastPurchase;
     }
 }

@@ -10,7 +10,7 @@ public class Item {
     Item() {
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }
 
@@ -18,7 +18,7 @@ public class Item {
         this.id = id;
     }
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 
@@ -26,7 +26,7 @@ public class Item {
         this.title = title;
     }
 
-    public int getCode() {
+    int getCode() {
         return code;
     }
 
@@ -34,7 +34,7 @@ public class Item {
         this.code = code;
     }
 
-    public String getProducer() {
+    String getProducer() {
         return producer;
     }
 
@@ -42,7 +42,7 @@ public class Item {
         this.producer = producer;
     }
 
-    public LocalDate getDateOfLastUpdate() {
+    LocalDate getDateOfLastUpdate() {
         return dateOfLastUpdate;
     }
 

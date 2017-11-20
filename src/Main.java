@@ -15,13 +15,31 @@ public class Main {
         readCustomersFile("Customers.csv");
         readItemsFile("Items.csv");
 
+        //createEmptyTables(connection);
+
         importItemToDB(readItemsFile("Items.csv"), connection);
         importCustomerToDB(readCustomersFile("Customers.csv"), connection);
 
     }
 
+    private static void createEmptyTables(Connection connection) throws Exception {
+        final String sqlDropTable = "DROP TABLE PURCHASES\n" +
+                "drop table CUSTOMERS\n" +
+                "drop table ITEMS;";
+
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sqlDropTable);
+            stmt.executeUpdate();
+            connection.commit();
+
+        } catch (SQLException e) {
+            throw new Exception(e);
+        }
+    }
+
     /**
-     *  Reads CSV file, parses it to fields, creates object with fields and adds it to Collection
+     * Reads CSV file, parses it to fields, creates object with fields and adds it to Collection
+     *
      * @param fileName - file that you want to read
      * @return Arraylist of customers
      * @throws IOException
@@ -73,7 +91,6 @@ public class Main {
         return customersList;
     }
 
-
     /**
      * Reads CSV file, parses it to fields, creates object with fields and adds it to Collection
      *
@@ -124,8 +141,9 @@ public class Main {
 
     /**
      * Imports collections of customers to DB
+     *
      * @param customersList - ArraList of customers
-     * @param con - connection
+     * @param con           - connection
      * @throws Exception
      */
     private static void importCustomerToDB(ArrayList<Customer> customersList, Connection con) throws Exception {
@@ -159,8 +177,9 @@ public class Main {
 
     /**
      * Imports collection of items to DB
+     *
      * @param itemsList - ArraList of items
-     * @param con - connection
+     * @param con       - connection
      * @throws Exception
      */
     private static void importItemToDB(ArrayList<Item> itemsList, Connection con) throws Exception {
@@ -253,4 +272,5 @@ public class Main {
         }
         return result;
     }
+
 }
